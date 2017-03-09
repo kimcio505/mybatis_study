@@ -1,5 +1,6 @@
 package kr.or.dgit.mybatis_study;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.AfterClass;
@@ -24,7 +25,8 @@ public class StudentDaoTest {
 
 	   @Test
 	   public void testSelectStudentByAll() {
-	      List<Student> lists = studentService.selectStudentByAll();
-	      Assert.assertNotNull(lists);
+		   Student student = new Student(7, "설동훈","sdh23@test.co.kr", new Date());
+	      int res = studentService.insertStudent(student);
+	      Assert.assertEquals(1, res);
 	   }
 }
