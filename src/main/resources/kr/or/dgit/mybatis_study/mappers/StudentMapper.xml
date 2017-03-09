@@ -16,7 +16,7 @@
 	</select>
 	
 	<update id="updateStudent" parameterType="Student">
-		update student set stud_id,name,email,dob
+		update student set stud_id=#{studId},name=#{name},email=#{email},dob=#{dob}
 		where stud_id = #{studId} 
 	</update>
 </mapper>

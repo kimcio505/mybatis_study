@@ -23,11 +23,13 @@ public class StudentDaoTest {
 	      studentService = null;
 	   }
 
-	   @Test
+	@Test
 	   public void testSelectStudentByAll() {
-		   Student student = new Student(7, "설동훈","sdh23@test.co.kr", new Date());
-	      int res = studentService.insertStudent(student);
-	      Assert.assertEquals(1, res);
+		 List<Student> list = studentService.selectStudentByAll();
+		 for(Student s : list){
+			 System.out.println(s);
+		 }
+	      Assert.assertNotNull(list);
 	   }
 	  /* @Test
 	   public void testInsertStudent(){
@@ -38,11 +40,11 @@ public class StudentDaoTest {
 		   Assert.assertEquals(1, res);
 	   }*/
 	   
-	   @Test
+	/*   @Test
 	   public void testSelectStudentByNo(){
 		   Student student = studentService.selectStudentByNo(5);
 		   Assert.assertNotNull(student);
-	   }
+	   }*/
 	   @Test
 	   public void testUpdateStudent(){
 		   Student student = new Student(2,"김성환", "lovelove@love.love", new Date());
