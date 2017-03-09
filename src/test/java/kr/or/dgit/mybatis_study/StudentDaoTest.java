@@ -29,4 +29,19 @@ public class StudentDaoTest {
 	      int res = studentService.insertStudent(student);
 	      Assert.assertEquals(1, res);
 	   }
+	  /* @Test
+	   public void testInsertStudent(){
+		   Student student = new Student(3,"박진실","lovetrue@love.love.love" ,new Date());
+		   
+		   int res = studentService.insertStudent(student);
+		   
+		   Assert.assertEquals(1, res);
+	   }*/
+	   
+	   @Test
+	   public void testSelectStudentByNo(){
+		   Student student = studentService.selectStudentByNo(5);
+		   
+		   Assert.assertNotNull(student);
+	   }
 }
