@@ -19,4 +19,9 @@
 		update student set stud_id,name,email,dob
 		where stud_id = #{studId} 
 	</update>
+	
+	<delete id="deleteStudentByNo" parameterType="Student">
+		delete from student
+		where stud_Id = #{studId}
+	</delete>
 </mapper>

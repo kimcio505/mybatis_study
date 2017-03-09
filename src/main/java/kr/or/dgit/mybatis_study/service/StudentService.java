@@ -49,7 +49,15 @@ public class StudentService {
 		sqlSession.commit();
 		return res;
 	}
-	
+	//deleteStudent
+	public int deleteStudent(int studNo){
+		SqlSession sqlSession = MybatisSqlSessionFactory.openSession();
+		StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+		
+		int res = studentDao.deleteStudentByNo(studNo);
+		sqlSession.commit();
+		return res;
+	}
 }
 
 
